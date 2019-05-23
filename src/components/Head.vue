@@ -1,16 +1,29 @@
 <template>
-    <div class="head" :style="headStyle">
+    <div :style="headStyle" >
         <div class="container">
-            <div class="row" style="background-color: red">
-                <div class="col-sm-1 col-md-1" style="background-color: yellow">123</div>
-                <div class="col-sm-2" style="background-color: green">345</div>
-                <div class="col-sm-3 col-md-3" style="background-color: red">345</div>
+            <!-- Stack the columns on mobile by making one full-width and the other half-width -->
+            <div class="row" style="background-color: lavender">
+                <div class="col-xs-6 col-md-4">   <router-link to="/foo">Go to Foo</router-link></div>
+                <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
+                <div class="col-xs-offset-9 col-md-4">.col-xs-6 .col-md-4</div>
             </div>
 
+            <!-- Columns start at 50% wide on mobile and bump up to 33.3% wide on desktop -->
+            <div class="row">
+                <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
+                <div class="col-xs-0 col-md-4">.col-xs-6 .col-md-4</div>
+                <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
+            </div>
+
+            <!-- Columns are always 50% wide, on mobile and desktop -->
+            <div class="row">
+                <div class="col-xs-6">.col-xs-6</div>
+                <div class="col-xs-6">.col-xs-6</div>
+            </div>
         </div>
 
-        <div style="height: 100px;background-color: red"></div>
     </div>
+
 </template>
 
 <script>
@@ -19,6 +32,7 @@
         data: function () {
             return {
                 headStyle: {
+                    padding: '0px',
                     width: '100%',
                     height:  function(){
                         let h = window.innerHeight;
@@ -29,7 +43,8 @@
                             h *= 0.38;
                         }
                         return h+"px";
-                    } ()
+                    } (),
+                    backgroundColor: '#3366b3'
                 }
             };
         }
@@ -37,5 +52,4 @@
 </script>
 
 <style scoped>
-
 </style>

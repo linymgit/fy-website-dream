@@ -1,18 +1,17 @@
 <template>
   <div id="app">
     <Head></Head>
+    <CentalTest></CentalTest>
   </div>
 </template>
 
 <script>
   import Head from "./components/Head";
+  import CentalTest from "./components/CentalTest";
 
 export default {
   name: 'app',
-  components: {Head},
-  component:{
-    Head
-  },
+  components: {Head,CentalTest},
   data() {
     return {
     };
@@ -26,4 +25,5 @@ export default {
 <style>
   @import "assets/less/fy.css";
 
+  /*@import "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css";*/
 </style>
